@@ -89,5 +89,6 @@ defmodule GalleryWeb do
   def galleries() do
     File.ls!("lib/templates/gallery")
     |> Enum.map(&String.slice(&1, 0..-11))
+    |> Enum.sort()
   end
 end
