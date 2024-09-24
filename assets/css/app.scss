@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+}
+
+html {
+  background-color: #ccffcc;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+  gap: 1em;
+  overflow-x: hidden;
+}
+
+.gallery, header {
+  padding: 2em;
+  width: min(1000px, calc(100% - 2em));
+}
+
+.gallery {
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+#viewer {
+  flex: 1;
+}
+
+.info {
+  height: 1em;
+  flex: 0;
+  padding: 0.5em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#image_list {
+  padding: 0.5em;
+  display: flex;
+  overflow-x: scroll;
+  gap: 0.5em;
+  overflow-y: hidden;
+}
+
+.image > img {
+  max-height: 80px;
+  max-width: 100%;
+}
+
+.image {
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  padding: 0.25em;
+}
+
+.image > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.image.selected {
+  border: 2px solid rgb(40, 100, 220);
+}
+
+.collection {
+  width: calc(100% - 1em);
+  justify-content: center;
+  display: inline-flex;
+  height: min(24vw, 16em);
+  cursor: pointer;
+  margin: 0.5em;
+
+  > div {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    max-width: calc(100% - 1em);
+    height: 100%;
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
+  }
+  > div > div {
+    height: 100%;
+  }
+}
+
+.collection > div > div {
+  min-width: 0;
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+}
+
+.collection img {
+  object-fit: scale-down;
+  height: 100%;
+}
+
+#collection_view_back {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#collection_view {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > div {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      width: 2em;
+      background-color: #cccccc;
+      color: black;
+      cursor: unset;
+      text-align: center;
+    }
+
+    img {
+      max-width: calc(100vw - 4em);
+      height: calc(100vh - 8em);
+
+      max-height: calc(100vh - 8em);
+      object-fit: contain;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}
+
+#collection_view_images {
+  background-color: #cccccc;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+#collection_view_labels {
+  background-color: #bbbbbb;
+  display: flex;
+}
+
+#chk_a:not(:checked) ~ div {
+  .im_a {
+    display: none;
+  }
+  label[for="chk_a"] {
+    cursor: pointer;
+    background: none;
+  }
+}
+
+#chk_b:not(:checked) ~ div {
+  .im_b {
+    display: none;
+  }
+  label[for="chk_b"] {
+    cursor: pointer;
+    background: none;
+  }
+}
+
+#chk_c:not(:checked) ~ div {
+  .im_c {
+    display: none;
+  }
+  label[for="chk_c"] {
+    cursor: pointer;
+    background: none;
+  }
+}
+
+#chk_d:not(:checked) ~ div {
+  .im_d {
+    display: none;
+  }
+  label[for="chk_d"] {
+    cursor: pointer;
+    background: none;
+  }
+}
+
+.date {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em;
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    gap: 0.5em;
+  }
+}
+
+iframe {
+  max-width: 100%;
+}
+
+footer {
+  padding: 0;
+}

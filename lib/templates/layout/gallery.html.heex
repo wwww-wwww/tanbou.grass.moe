@@ -1,0 +1,12 @@
+<div class="gallery">
+  <%= @inner_content %>
+</div>
+
+<%= if not Map.get(assigns, :index, false) do %>
+<div>
+  <% url = "https://counter.grass.moe/tanbou.grass.moe:" <> assigns.page <> "?theme=rule34" %>
+  <object type="image/svg+xml" data={url}>
+  <img src={url}/>
+  </object>
+</div>
+<% end %>

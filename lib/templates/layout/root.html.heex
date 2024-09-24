@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=40.0">
-  <meta name="csrf-token" content="KW4OBR1Tei0Tcns5cR8UOi1WMg8pfVwbLYgCEk7_E75aHOe_E3dHj64X">
-  <link rel="alternate" type="application/atom+xml" title="Posts" href="/atom.xml">
-<title data-suffix=" · w&#39;s Exploration">Index · w&#39;s Exploration</title>
-  <link phx-track-static rel="stylesheet" href="/assets/app.css">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=40.0"/>
+  <link rel="alternate" type="application/atom+xml" title="Posts" href="/atom.xml" />
+  <%= live_title_tag assigns[:page_title] || "Index", suffix: " · w's Exploration" %>
+  <link phx-track-static rel="stylesheet" href={GalleryWeb.Router.Helpers.static_path(@conn, "/assets/app.css")}/>
 </head>
 <body id="body">
   <header>
@@ -17,28 +16,9 @@
       <a href="/atom.xml">Subscribe (Atom)</a>
     </div>
   </header>
-<div class="gallery">
-<span class="date">May 25, 2024</span>
-<h1>
-<a href="/2024/05/mygo">
-  Mygo
-</a>
-</h1>
-</div>
-<div class="gallery">
-<span class="date">May 25, 2024</span>
-<h1>
-<a href="/2024/05/new">
-  Initial commit
-</a>
-</h1>
-hi
-</div>
-<div>
-<object type="image/svg+xml" data="https://counter.grass.moe/tanbou.grass.moe:index?theme=rule34">
-<img src="https://counter.grass.moe/tanbou.grass.moe:index?theme=rule34">
-</object>
-</div>
+
+  <%= @inner_content %>
+
   <div id="collection_view_back" style="display: none;"></div>
   <div id="collection_view" style="display: none;">
   <div>
@@ -60,8 +40,10 @@ hi
   </div>
   </div>
   </div>
+
   <footer>
   </footer>
-  <script defer phx-track-static type="text/javascript" src="/assets/app.js"></script>
+
+  <script defer phx-track-static type="text/javascript" src={GalleryWeb.Router.Helpers.static_path(@conn, "/assets/app.js")}></script>
 </body>
 </html>

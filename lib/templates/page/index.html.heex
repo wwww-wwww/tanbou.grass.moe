@@ -1,0 +1,15 @@
+<%= for {year, month, name, name_e, a} <- @galleries do %>
+  <%= Phoenix.Template.render(GalleryWeb.GalleryHTML, a, "html",
+    layout: {GalleryWeb.Layouts, "gallery"},
+    index: true, page: {year, month, name_e}
+  ) %>
+<% end %>
+
+<div>
+  <object
+    type="image/svg+xml"
+    data="https://counter.grass.moe/tanbou.grass.moe:index?theme=rule34"
+  >
+    <img src="https://counter.grass.moe/tanbou.grass.moe:index?theme=rule34" />
+  </object>
+</div>
